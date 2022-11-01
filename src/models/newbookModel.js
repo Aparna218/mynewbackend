@@ -3,15 +3,17 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 
 const newbookSchema = new mongoose.Schema( {
     name: String,
+    author: String,
     author_id: {
-        type: ObjectId,
-        ref: "Author"
+       type: ObjectId,
+        ref: "newAuthor"
     }, 
     price: Number,
-    ratings: Number
+    ratings: Number,
+    publisher: String
 
 
 }, { timestamps: true });
 
 
-module.exports = mongoose.model('LibraryBook', newbookSchema)
+module.exports = mongoose.model('newBook', newbookSchema)
